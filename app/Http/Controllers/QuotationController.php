@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Quotation;
 use App\Http\Requests\StoreQuotationRequest;
 use App\Http\Requests\UpdateQuotationRequest;
+use App\Models\Wilaya;
 
 class QuotationController extends Controller
 {
@@ -25,7 +26,8 @@ class QuotationController extends Controller
      */
     public function create()
     {
-        return view('quotation.create');
+        $wilayas = Wilaya::all();
+        return view('quotation.create', compact('wilayas'));
     }
 
     /**

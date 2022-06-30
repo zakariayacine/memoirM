@@ -15,7 +15,7 @@ class WilayaController extends Controller
      */
     public function index()
     {
-        //
+       return Wilaya::all();
     }
 
     /**

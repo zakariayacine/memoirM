@@ -6,6 +6,7 @@ use App\Models\Contract;
 use App\Http\Requests\StoreContractRequest;
 use App\Http\Requests\UpdateContractRequest;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class ContractController extends Controller
 {
@@ -24,9 +25,11 @@ class ContractController extends Controller
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
+     * SELECT * FROM wilayas w INNER JOIN communes c on c.wilaya_id = w.id WHERE w.id = 16; 
      */
     public function create()
     {
+       
         //
     }
 

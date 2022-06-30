@@ -17,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/wilaya', [App\Http\Controllers\WilayaController::class, 'index'])->name('wilaya');
+Route::get('/commune/{id?}', [App\Http\Controllers\CommuneController::class, 'index'])->name('commune');

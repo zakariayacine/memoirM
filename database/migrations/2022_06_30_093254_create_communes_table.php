@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('communes', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('code_postal');
             $table->foreignId('wilaya_id')->constrained();
             $table->timestamps();
         });

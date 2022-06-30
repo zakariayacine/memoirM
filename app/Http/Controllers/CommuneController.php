@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Commune;
 use App\Http\Requests\StoreCommuneRequest;
 use App\Http\Requests\UpdateCommuneRequest;
+use App\Models\Wilaya;
+use Illuminate\Support\Facades\DB;
 
 class CommuneController extends Controller
 {
@@ -13,9 +15,9 @@ class CommuneController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id = "1")
     {
-        //
+      return  DB::select('SELECT * FROM wilayas w INNER JOIN communes c on c.wilaya_id = w.id WHERE w.id = '.$id);
     }
 
     /**
