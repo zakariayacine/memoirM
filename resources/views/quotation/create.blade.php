@@ -38,6 +38,7 @@
             myDiv = document.getElementById("container");
             myDiv.innerHTML = "";
             var select = document.createElement("select");
+            select.name = 'commune';
             for (const val of response.data)
                 {
                     var option = document.createElement("option");
